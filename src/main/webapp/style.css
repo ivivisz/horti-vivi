@@ -323,3 +323,43 @@ label {
     font-weight: bold;
     color: #2d6a4f;
 }
+
+.grafico-box {
+    margin-top: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.grafico-box h2 {
+    color: #1f3f8f;
+    margin-bottom: 20px;
+}
+
+.grafico-item {
+    margin-bottom: 18px;
+}
+
+.grafico-nome {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #064e3b;
+}
+
+.barra-container {
+    width: 100%;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.barra {
+    background: linear-gradient(90deg, #16a34a, #84cc16);
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: right;
+}

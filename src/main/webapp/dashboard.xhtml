@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html">
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets">
 
 <h:head>
     <title>Dashboard - Horti Vivi</title>
@@ -72,6 +73,23 @@
                         <span>🏷️</span>
                         <h3>Produto mais barato</h3>
                         <p>#{produtoBean.produtoMaisBarato.nome}</p>
+                    </div>
+
+                    <div class="grafico-box">
+                        <h2>📈 Quantidade por fruta</h2>
+
+                        <ui:repeat value="#{produtoBean.produtos}" var="p">
+                            <div class="grafico-item">
+                                <span class="grafico-nome">#{p.nome}</span>
+
+                                <div class="barra-container">
+                                    <div class="barra"
+                                         style="width: #{(p.quantidade * 100) / produtoBean.maiorQuantidade}%;">
+                                        #{p.quantidade}
+                                    </div>
+                                </div>
+                            </div>
+                        </ui:repeat>
                     </div>
 
                 </div>

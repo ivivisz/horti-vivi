@@ -132,4 +132,11 @@ public class ProdutoBean implements Serializable {
                 .min((p1, p2) -> Double.compare(p1.getPreco(), p2.getPreco()))
                 .orElse(null);
     }
+
+    public int getMaiorQuantidade() {
+        return getProdutos().stream()
+                .mapToInt(Produto::getQuantidade)
+                .max()
+                .orElse(1);
+    }
 }
