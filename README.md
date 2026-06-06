@@ -76,7 +76,17 @@ http://localhost:8080/crud-produtos
 
 ## 📸 Telas do sistema
 
-Em breve.
+### 🔐 Login
+
+![Login](imagens/login.png)
+
+### 🍓 Cadastro de Frutas
+
+![Cadastro](imagens/cadastro.png)
+
+### 📦 Estoque
+
+![Estoque](imagens/estoque.png)
 
 ## 👩‍💻 Desenvolvedora
 
