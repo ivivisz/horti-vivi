@@ -78,15 +78,15 @@ http://localhost:8080/crud-produtos
 
 ### 🔐 Login
 
-![Login](imagens/login.png)
+![Login](images/login.png)
 
 ### 🍓 Cadastro de Frutas
 
-![Cadastro](imagens/cadastro.png)
+![Cadastro](images/cadastro.png)
 
 ### 📦 Estoque
 
-![Estoque](imagens/estoque.png)
+![Estoque](images/estoque.png)
 
 ## 👩‍💻 Desenvolvedora
 
