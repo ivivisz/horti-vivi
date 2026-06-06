@@ -88,11 +88,13 @@ http://localhost:8080/crud-produtos
 
 ![Estoque](images/estoque.png)
 
-## 👩‍💻 Desenvolvedora
+### 👩‍💻 Desenvolvedora
 
 **Vitória Cristine**
 
 Estudante de Sistemas de Informação e desenvolvedora do projeto Horti Vivi.
+
+GitHub: @ivivisz
 
 ## 📄 Licença
 
