@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+<h:head>
+    <title>FrutiGestão - Cadastro de Frutas</title>
+    <link rel="stylesheet" href="style.css" />
+</h:head>
+
+<h:body>
+
+    <f:metadata>
+        <f:viewAction action="#{loginBean.verificarLogin}" />
+    </f:metadata>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <h1>🍓 Horti Vivi 🍓</h1>
+                <p>Sistema de controle para hortifruti</p>
+            </div>
+
+            <nav class="menu">
+                <h:button styleClass="menu-btn ativo"
+                          value="🍍 Cadastrar Frutas"
+                          outcome="index.xhtml" />
+
+                <h:button styleClass="menu-btn"
+                          value="📦 Ver Estoque"
+                          outcome="lista.xhtml" />
+
+                <h:form styleClass="logout-form">
+                    <h:commandButton
+                            styleClass="menu-btn sair-btn"
+                            value="🚪 Sair"
+                            action="#{loginBean.sair}" />
+                </h:form>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div class="container">
+
+                <div class="form-header">
+                    <h1>Cadastro de Frutas</h1>
+                    <p>Registre frutas, preços e quantidades em estoque.</p>
+                </div>
+
+                <h:form>
+
+                    <h:outputLabel value="Nome da fruta:" />
+                    <h:inputText styleClass="input"
+                                 value="#{produtoBean.produto.nome}"
+                                 required="true" />
+
+                    <h:outputLabel value="Preço:" />
+                    <h:inputText styleClass="input"
+                                 value="#{produtoBean.produto.preco}"
+                                 required="true" />
+
+                    <h:outputLabel value="Quantidade em estoque:" />
+                    <h:inputText styleClass="input"
+                                 value="#{produtoBean.produto.quantidade}"
+                                 required="true" />
+
+                    <h:commandButton styleClass="btn"
+                                     value="🍍 Cadastrar Fruta"
+                                     action="#{produtoBean.salvar}"
+                                     rendered="#{not produtoBean.editando}" />
+
+                    <h:commandButton styleClass="btn"
+                                     value="🔄 Atualizar Fruta"
+                                     action="#{produtoBean.atualizar}"
+                                     rendered="#{produtoBean.editando}" />
+
+                </h:form>
+
+            </div>
+        </main>
+
+    </div>
+
+</h:body>
+
+</html>

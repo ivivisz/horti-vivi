@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:pt="jakarta.faces.passthrough">
+
+<h:head>
+    <title>Estoque de Frutas</title>
+    <link rel="stylesheet" href="style.css" />
+</h:head>
+
+<h:body>
+
+    <f:metadata>
+        <f:viewAction action="#{loginBean.verificarLogin}" />
+    </f:metadata>
+
+    <div class="layout">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <h1>🍓 Horti Vivi 🍓</h1>
+            <p>Sistema de controle para hortifruti</p>
+        </div>
+
+        <nav class="menu">
+            <h:button styleClass="menu-btn"
+                      value="🍍 Cadastrar Frutas"
+                      outcome="index.xhtml" />
+
+            <h:button styleClass="menu-btn ativo"
+                      value="📦 Ver Estoque"
+                      outcome="lista.xhtml" />
+
+            <h:form styleClass="logout-form">
+                <h:commandButton
+                        styleClass="menu-btn sair-btn"
+                        value="🚪 Sair"
+                        action="#{loginBean.sair}" />
+            </h:form>
+        </nav>
+    </aside>
+
+    <main class="content">
+    <div class="container">
+
+        <div class="header-lista">
+            <div>
+                <h1>Estoque de Frutas</h1>
+                <p>Acompanhe as frutas cadastradas e suas quantidades em estoque.</p>
+            </div>
+
+            <h:form>
+                <h:commandButton styleClass="btn"
+                                 value="+ Nova Fruta"
+                                 action="#{produtoBean.novo}" />
+            </h:form>
+        </div>
+
+        <div class="cards dashboard-cards">
+
+            <div class="card-info">
+                <span>🍎</span>
+                <h3>Total de frutas</h3>
+                <p>#{produtoBean.produtos.size()}</p>
+            </div>
+
+            <div class="card-info">
+                <span>💰</span>
+                <h3>Valor do estoque</h3>
+                <p>#{produtoBean.valorTotalFormatado}</p>
+            </div>
+
+            <div class="card-info card-alerta">
+                <span>⚠️</span>
+                <h3>Estoque baixo</h3>
+                <p>#{produtoBean.produtosEmBaixa} item(ns)</p>
+            </div>
+
+            <div class="card-info">
+                <span>📦</span>
+                <h3>Quantidade total</h3>
+                <p>#{produtoBean.quantidadeTotalEstoque} unidades</p>
+            </div>
+
+        </div>
+
+        <h:form>
+            <div class="search-box">
+
+                <h:inputText
+                        styleClass="input-search"
+                        value="#{produtoBean.termoPesquisa}"
+                        pt:placeholder="🔍 Pesquisar fruta..." />
+
+                <h:commandButton
+                        styleClass="btn"
+                        value="Pesquisar" />
+
+            </div>
+        </h:form>
+
+        <h:form>
+            <h:dataTable value="#{produtoBean.produtosFiltrados}"
+                         var="p"
+                         styleClass="table">
+
+                <h:column>
+                    <f:facet name="header">Fruta</f:facet>
+                    #{p.nome}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Preço</f:facet>
+                    R$ #{p.preco}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Quantidade</f:facet>
+
+                    <h:outputText value="#{p.quantidade}"
+                                  styleClass="#{p.quantidade lt 5 ? 'estoque-baixo' : ''}" />
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Ações</f:facet>
+
+                    <h:commandButton styleClass="btn btn-small"
+                                     value="Editar"
+                                     action="#{produtoBean.prepararEdicao(p)}" />
+
+                    <h:commandButton styleClass="btn btn-small btn-danger"
+                                     value="Excluir"
+                                     action="#{produtoBean.excluir(p.id)}" />
+                </h:column>
+
+            </h:dataTable>
+        </h:form>
+
+    </div>
+
+    </main>
+
+    </div>
+
+</h:body>
+
+</html>

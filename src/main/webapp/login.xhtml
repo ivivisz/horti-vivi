@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <title>Login - Horti Vivi</title>
+    <link rel="stylesheet" href="style.css" />
+</h:head>
+
+<h:body>
+
+    <div class="login-page">
+
+        <div class="login-card">
+
+            <h1>🍓 Horti Vivi 🍓</h1>
+            <p>Acesse o sistema de controle para hortifruti</p>
+
+            <h:form>
+
+                <h:messages styleClass="msg-error" />
+
+                <h:outputLabel value="Usuário:" />
+                <h:inputText styleClass="input"
+                             value="#{loginBean.usuario}" />
+
+                <h:outputLabel value="Senha:" />
+                <h:inputSecret styleClass="input"
+                               value="#{loginBean.senha}" />
+
+                <h:commandButton styleClass="btn login-btn"
+                                 value="Entrar"
+                                 action="#{loginBean.entrar}" />
+
+            </h:form>
+
+        </div>
+
+    </div>
+
+</h:body>
+</html>
