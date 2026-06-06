@@ -17,22 +17,16 @@
                       value="org.postgresql.Driver"/>
 
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:postgresql://localhost:5432/crud_java"/>
+                      value="jdbc:postgresql://ep-wild-violet-aqs5cy5q-pooler.c-8.us-east-1.aws.neon.tech/neondb?sslmode=require"/>
 
             <property name="jakarta.persistence.jdbc.user"
-                      value="postgres"/>
+                      value="neondb_owner"/>
 
             <property name="jakarta.persistence.jdbc.password"
-                      value="123456"/>
+                      value="npg_LY4TA7PdugrN"/>
 
             <property name="hibernate.dialect"
                       value="org.hibernate.dialect.PostgreSQLDialect"/>
-
-            <property name="hibernate.show_sql"
-                      value="true"/>
-
-            <property name="hibernate.format_sql"
-                      value="true"/>
 
         </properties>
 
