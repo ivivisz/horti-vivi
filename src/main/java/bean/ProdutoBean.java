@@ -108,4 +108,28 @@ public class ProdutoBean implements Serializable {
     public void setTermoPesquisa(String termoPesquisa) {
         this.termoPesquisa = termoPesquisa;
     }
+
+    public Produto getProdutoMaiorEstoque() {
+        return getProdutos().stream()
+                .max((p1, p2) -> Integer.compare(p1.getQuantidade(), p2.getQuantidade()))
+                .orElse(null);
+    }
+
+    public Produto getProdutoMenorEstoque() {
+        return getProdutos().stream()
+                .min((p1, p2) -> Integer.compare(p1.getQuantidade(), p2.getQuantidade()))
+                .orElse(null);
+    }
+
+    public Produto getProdutoMaisCaro() {
+        return getProdutos().stream()
+                .max((p1, p2) -> Double.compare(p1.getPreco(), p2.getPreco()))
+                .orElse(null);
+    }
+
+    public Produto getProdutoMaisBarato() {
+        return getProdutos().stream()
+                .min((p1, p2) -> Double.compare(p1.getPreco(), p2.getPreco()))
+                .orElse(null);
+    }
 }
