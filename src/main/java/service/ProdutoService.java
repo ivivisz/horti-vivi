@@ -13,8 +13,32 @@ public class ProdutoService {
 
         try {
             em.getTransaction().begin();
-            em.persist(produto);
+
+            List<Produto> existentes = em.createQuery(
+                            "SELECT p FROM Produto p WHERE LOWER(p.nome) = LOWER(:nome)",
+                            Produto.class
+                    ).setParameter("nome", produto.getNome().trim())
+                    .getResultList();
+
+            if (!existentes.isEmpty()) {
+                Produto produtoExistente = existentes.get(0);
+
+                produtoExistente.setQuantidade(
+                        produtoExistente.getQuantidade() + produto.getQuantidade()
+                );
+
+                produtoExistente.setPreco(produto.getPreco());
+
+                em.merge(produtoExistente);
+            } else {
+                em.persist(produto);
+            }
+
             em.getTransaction().commit();
+
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
         } finally {
             em.close();
         }
