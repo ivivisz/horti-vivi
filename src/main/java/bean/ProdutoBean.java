@@ -157,4 +157,11 @@ public class ProdutoBean implements Serializable {
 
         return (produto.getQuantidade() * 100) / getMaiorQuantidade();
     }
+
+    public List<Produto> getProdutosOrdenados() {
+        return getProdutos().stream()
+                .sorted((p1, p2) ->
+                        Integer.compare(p2.getQuantidade(), p1.getQuantidade()))
+                .toList();
+    }
 }
