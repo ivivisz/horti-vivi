@@ -1,5 +1,7 @@
 package bean;
 
+import model.Usuario;
+import service.UsuarioService;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
@@ -15,15 +17,28 @@ public class LoginBean implements Serializable {
     private String senha;
     private boolean logado = false;
 
+    private UsuarioService usuarioService = new UsuarioService();
+
     public String entrar() {
-        if ("admin".equals(usuario) && "123".equals(senha)) {
+
+        Usuario usuarioEncontrado =
+                usuarioService.buscarPorEmail(usuario);
+
+        if (usuarioEncontrado != null &&
+                usuarioEncontrado.getSenha().equals(senha)) {
+
             logado = true;
             return "index.xhtml?faces-redirect=true";
         }
 
-        FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage(FacesMessage.SEVERITY_ERROR,
-                        "Usuário ou senha inválidos", null));
+        FacesContext.getCurrentInstance().addMessage(
+                null,
+                new FacesMessage(
+                        FacesMessage.SEVERITY_ERROR,
+                        "Usuário ou senha inválidos",
+                        null
+                )
+        );
 
         return null;
     }
