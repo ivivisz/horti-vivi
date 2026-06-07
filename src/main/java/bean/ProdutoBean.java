@@ -139,4 +139,14 @@ public class ProdutoBean implements Serializable {
                 .max()
                 .orElse(1);
     }
+
+    public String getClasseEstoque(Produto produto) {
+        if (produto.getQuantidade() < 3) {
+            return "barra-baixa";
+        } else if (produto.getQuantidade() <= 5) {
+            return "barra-media";
+        } else {
+            return "barra-alta";
+        }
+    }
 }

@@ -360,12 +360,25 @@ label {
 }
 
 .barra {
-    background: linear-gradient(90deg, #16a34a, #84cc16);
     color: white;
     padding: 8px;
     border-radius: 10px;
     font-weight: bold;
     text-align: right;
+    min-width: 35px;
+    transition: 0.3s;
+}
+
+.barra-alta {
+    background: linear-gradient(90deg, #16a34a, #84cc16);
+}
+
+.barra-media {
+    background: linear-gradient(90deg, #f59e0b, #facc15);
+}
+
+.barra-baixa {
+    background: linear-gradient(90deg, #dc2626, #f87171);
 }
 
 .dashboard-cards {
