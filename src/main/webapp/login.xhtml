@@ -20,7 +20,7 @@
 
                 <h:messages styleClass="msg-error" />
 
-                <h:outputLabel value="Usuário:" />
+                <h:outputLabel value="E-mail:" />
                 <h:inputText styleClass="input"
                              value="#{loginBean.usuario}" />
 
@@ -31,6 +31,12 @@
                 <h:commandButton styleClass="btn login-btn"
                                  value="Entrar"
                                  action="#{loginBean.entrar}" />
+
+                <br/><br/>
+
+                <h:button styleClass="btn btn-secondary login-btn"
+                          value="Criar Conta"
+                          outcome="cadastroUsuario.xhtml" />
 
             </h:form>
 
