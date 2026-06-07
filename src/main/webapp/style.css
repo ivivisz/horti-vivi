@@ -384,3 +384,36 @@ label {
 .dashboard-cards {
     margin-bottom: 30px;
 }
+
+.legenda-grafico {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.legenda-grafico span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legenda {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legenda.verde {
+    background: #22c55e;
+}
+
+.legenda.amarelo {
+    background: #facc15;
+}
+
+.legenda.vermelho {
+    background: #ef4444;
+}
