@@ -149,4 +149,12 @@ public class ProdutoBean implements Serializable {
             return "barra-alta";
         }
     }
+
+    public int getPercentualEstoque(Produto produto) {
+        if (getMaiorQuantidade() == 0) {
+            return 0;
+        }
+
+        return (produto.getQuantidade() * 100) / getMaiorQuantidade();
+    }
 }

@@ -92,8 +92,8 @@
 
                                 <div class="barra-container">
                                     <div class="barra #{produtoBean.getClasseEstoque(p)}"
-                                         style="width: #{(p.quantidade * 100) / produtoBean.maiorQuantidade}%;">
-                                        #{(p.quantidade * 100) / produtoBean.maiorQuantidade}%
+                                         style="width: #{produtoBean.getPercentualEstoque(p)}%;">
+                                        #{produtoBean.getPercentualEstoque(p)}%
                                     </div>
                                 </div>
                             </div>
