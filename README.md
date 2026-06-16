@@ -51,7 +51,7 @@ src/
  └── test/
 ```
 
-## ⚙️ Como executar o projeto
+## ⚙️ Como executar localmente
 
 ### Pré-requisitos
 
