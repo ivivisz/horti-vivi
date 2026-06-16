@@ -4,19 +4,29 @@ Sistema de gerenciamento de estoque para hortifrúti desenvolvido em Java utiliz
 
 ## 📋 Sobre o projeto
 
-O Horti Vivi foi desenvolvido com o objetivo de auxiliar no controle de estoque de frutas e produtos de um hortifrúti, permitindo o cadastro, consulta, edição e remoção de itens de forma simples e organizada.
+O Horti Vivi é um sistema web de gerenciamento de estoque para hortifrúti desenvolvido em Java utilizando JSF, JPA, Hibernate e PostgreSQL.
 
-O projeto foi criado como atividade acadêmica da disciplina de Tecnologia Web e posteriormente aprimorado para fins de estudo e prática de desenvolvimento Java Web.
+O sistema permite o cadastro e autenticação de usuários, gerenciamento completo de produtos, controle de estoque e visualização de indicadores através de um dashboard interativo.
+
+Inicialmente criado como projeto acadêmico da disciplina de Tecnologia Web, o sistema vem sendo continuamente aprimorado para fins de aprendizado e desenvolvimento profissional, incorporando recursos encontrados em aplicações reais de gestão.
 
 ## 🚀 Funcionalidades
 
-- Login de usuário
+- Cadastro de usuários
+- Login com autenticação por e-mail e senha
 - Cadastro de frutas
 - Consulta de estoque
 - Edição de produtos cadastrados
 - Exclusão de produtos
-- Interface moderna e intuitiva
-- Controle de quantidade em estoque
+- Pesquisa de produtos
+- Dashboard gerencial
+- Indicadores de estoque
+- Produto com maior estoque
+- Produto com menor estoque
+- Produto mais caro
+- Produto mais barato
+- Gráfico visual de estoque
+- Interface responsiva e intuitiva
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -88,6 +98,12 @@ http://localhost:8080/crud-produtos
 
 ![Estoque](images/estoque.png)
 
+## 🌐 Acesso Online
+
+O sistema está disponível em:
+
+https://horti-vivi.onrender.com
+
 ### 👩‍💻 Desenvolvedora
 
 **Vitória Cristine**
@@ -95,6 +111,19 @@ http://localhost:8080/crud-produtos
 Estudante de Sistemas de Informação e desenvolvedora do projeto Horti Vivi.
 
 GitHub: @ivivisz
+
+## 🎯 Aprendizados
+
+Durante o desenvolvimento deste projeto foram aplicados conceitos de:
+
+* Programação Orientada a Objetos (POO)
+* Arquitetura MVC
+* Persistência de dados com JPA e Hibernate
+* Banco de dados PostgreSQL
+* Desenvolvimento Web com JSF
+* Controle de sessão e autenticação
+* Hospedagem de aplicações Java no Render
+* Versionamento de código com Git e GitHub
 
 ## 📄 Licença
 
