@@ -19,9 +19,16 @@
         <aside class="sidebar">
             <div class="brand">
                 <h1>🍓 Horti Vivi 🍓</h1>
-                <p class="usuario-logado">
-                    Olá, #{loginBean.usuarioLogado.nome}
-                </p>
+                <div class="usuario-card">
+                    <div class="usuario-avatar">
+                        #{loginBean.usuarioLogado.nome.substring(0,1)}
+                    </div>
+
+                    <div>
+                        <span>Usuário logado</span>
+                        <strong>#{loginBean.usuarioLogado.nome}</strong>
+                    </div>
+                </div>
                 <p>Sistema de controle para hortifruti</p>
             </div>
 

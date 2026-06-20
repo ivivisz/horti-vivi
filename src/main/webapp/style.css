@@ -426,3 +426,38 @@ label {
     font-weight: 600;
     margin-top: 10px;
 }
+
+.usuario-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    padding: 12px;
+    border-radius: 14px;
+    margin: 18px 0 25px 0;
+    color: white;
+}
+
+.usuario-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: white;
+    color: #15803d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.usuario-card span {
+    display: block;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.usuario-card strong {
+    display: block;
+    font-size: 15px;
+}
