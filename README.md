@@ -92,7 +92,7 @@ http://localhost:8080/crud-produtos
 
 ### 👤 Cadastro de Usuário
 
-
+![Cadastro de Usuário](images/cadastro-usuario.png)
 
 ### 🍓 Cadastro de Frutas
 
@@ -104,7 +104,7 @@ http://localhost:8080/crud-produtos
 
 ### 📊 Dashboard
 
-
+![Dashboard](images/dashboard.png)
 
 ## 🌐 Acesso Online
 
