@@ -14,6 +14,7 @@ Inicialmente criado como projeto acadêmico da disciplina de Tecnologia Web, o s
 
 - Cadastro de usuários
 - Login com autenticação por e-mail e senha
+- Criptografia de senhas com BCrypt
 - Cadastro de frutas
 - Consulta de estoque
 - Edição de produtos cadastrados
