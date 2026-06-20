@@ -417,3 +417,12 @@ label {
 .legenda.vermelho {
     background: #ef4444;
 }
+
+.usuario-logado {
+    background: rgba(255,255,255,0.15);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+}

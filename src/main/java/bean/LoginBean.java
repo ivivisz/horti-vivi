@@ -7,6 +7,7 @@ import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 
+
 import java.io.Serializable;
 
 @Named
@@ -16,13 +17,21 @@ public class LoginBean implements Serializable {
     private String usuario;
     private String senha;
     private boolean logado = false;
+    private Usuario usuarioLogado;
 
     private UsuarioService usuarioService = new UsuarioService();
 
     public String entrar() {
 
-        if (usuarioService.validarLogin(usuario, senha)) {
+        Usuario usuarioEncontrado =
+                usuarioService.buscarPorEmail(usuario);
+
+        if (usuarioEncontrado != null &&
+                usuarioService.validarLogin(usuario, senha)) {
+
             logado = true;
+            usuarioLogado = usuarioEncontrado;
+
             return "index.xhtml?faces-redirect=true";
         }
 
@@ -42,6 +51,7 @@ public class LoginBean implements Serializable {
         logado = false;
         usuario = null;
         senha = null;
+        usuarioLogado = null;
         return "login.xhtml?faces-redirect=true";
     }
 
@@ -64,6 +74,8 @@ public class LoginBean implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public Usuario getUsuarioLogado() { return usuarioLogado; }
 
     public String verificarLogin() {
 
