@@ -3,7 +3,7 @@ package service;
 import jakarta.persistence.EntityManager;
 import model.Usuario;
 import util.JPAUtil;
-
+import org.mindrot.jbcrypt.BCrypt;
 import java.util.List;
 
 public class UsuarioService {
@@ -13,6 +13,8 @@ public class UsuarioService {
 
         try {
             em.getTransaction().begin();
+            String senhaCriptografada = BCrypt.hashpw(usuario.getSenha(), BCrypt.gensalt());
+            usuario.setSenha(senhaCriptografada);
             em.persist(usuario);
             em.getTransaction().commit();
         } catch (Exception e) {
@@ -44,13 +46,13 @@ public class UsuarioService {
         }
     }
 
-    public boolean validarLogin(String email, String senha) {
+    public boolean validarLogin(String email, String senhaDigitada) {
         Usuario usuario = buscarPorEmail(email);
 
         if (usuario == null) {
             return false;
         }
 
-        return usuario.getSenha().equals(senha);
+        return BCrypt.checkpw(senhaDigitada, usuario.getSenha());
     }
 }

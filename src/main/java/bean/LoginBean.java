@@ -21,12 +21,7 @@ public class LoginBean implements Serializable {
 
     public String entrar() {
 
-        Usuario usuarioEncontrado =
-                usuarioService.buscarPorEmail(usuario);
-
-        if (usuarioEncontrado != null &&
-                usuarioEncontrado.getSenha().equals(senha)) {
-
+        if (usuarioService.validarLogin(usuario, senha)) {
             logado = true;
             return "index.xhtml?faces-redirect=true";
         }
